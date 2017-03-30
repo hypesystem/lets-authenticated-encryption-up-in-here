@@ -1,0 +1,5 @@
+collections:
+  slides:
+    output: true
+    permalink: /slide/:path/
+
