@@ -2,7 +2,7 @@
 ---
 <section markdown="1">
 
-# Mac-forge experiments
+# Mac-sforge experiment
 
 </section>
 <section markdown="1">

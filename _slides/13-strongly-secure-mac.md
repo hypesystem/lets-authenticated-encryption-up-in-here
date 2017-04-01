@@ -4,8 +4,6 @@
 
 # Mac-forge experiment
 
-## Definition 4.2
-
 </section>
 <section markdown="1">
 
