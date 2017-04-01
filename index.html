@@ -7,7 +7,7 @@
         <title>Message Authentication Codes</title>
         <link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/white.css">
-        <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_SVG"></script>
     </head>
     <body>
         <div class="reveal">
@@ -17,6 +17,11 @@
         </div>
         <script>
             Reveal.initialize();
+            MathJax.Hub.Config({
+                "HTML-CSS": {
+                    scale: 100
+                }
+            });
         </script>
     </body>
 </html>
