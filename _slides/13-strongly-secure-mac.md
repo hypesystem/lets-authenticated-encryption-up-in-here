@@ -2,7 +2,7 @@
 ---
 <section markdown="1">
 
-# Mac-forge experiments
+# Mac-forge experiment
 
 ## Definition 4.2
 
@@ -19,8 +19,12 @@ $$\text{Mac-forge}_{\mathcal{A},\Pi}(n)$$:
     In that case the output of the experiment is defined to be 1.
 
 </section>
-<section markdown="1">
+<section markdown="1" style="text-align: left;">
 
+## Definition 4.2
 
+A message authentication code $$\Pi = (\text{Gen},\text{Mac},\text{Vrfy})$$ is existentially unforgeable under an adaptive chosen-message attack, or just secure, if for all probabilistic polynomial-time adversaries $$\mathcal{A}$$ there is a negligible function $$\text{negl}$$ such that:
+
+$$Pr[\text{Mac-forge}_{\mathcal{A},\Pi}(n)=1] \leq \text{negl}(n)$$
 
 </section>
