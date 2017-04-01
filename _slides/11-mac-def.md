@@ -1,7 +1,5 @@
 ---
 ---
-# MAC
+A mac-scheme is very much like an encryption-scheme.
 
-## Definition 4.1
-
-A message authentication code (MAC) consists 
+$$\Pi = (\text{Gen},\text{Mac},\text{Vrfy})$$

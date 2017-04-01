@@ -10,4 +10,4 @@ $$
 \end{cases}
 $$
 
-Timing attacks in <code>strcmp</code>
+Watch out for timing attacks in <code>strcmp</code>
