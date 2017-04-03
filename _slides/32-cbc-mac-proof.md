@@ -1,3 +1,7 @@
 ---
 ---
-Are we missing a CBC-mac proof?
+<section markdown="1">
+## CBC-MAC
+
+# Proof of Security
+</section>
