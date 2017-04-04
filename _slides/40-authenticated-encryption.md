@@ -2,4 +2,4 @@
 ---
 # Authenticated encryption
 
-Secrecy and integrity
+Secrecy _and_ integrity

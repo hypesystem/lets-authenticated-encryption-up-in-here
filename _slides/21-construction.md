@@ -13,5 +13,5 @@ length n as follows:
 
   * $$\text{Vrfy}$$: on input a key $$k \in \{0, 1\}^n$$, a message $$m \in \{0,
     1\}^n$$, and a tag $$t \in \{0, 1\}^n$$, output 1 if and only if $$t =
-    \text{F}_k(m)$$. (If $$|m| 6= |k|$$, then output 0.)
+    \text{F}_k(m)$$. (If $$|m| = |k|$$, then output 0.)
 </section>
