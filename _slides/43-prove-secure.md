@@ -30,15 +30,79 @@ encryption scheme $$(\text{Gen}', \text{Enc}', \text{Dec}')$$ as follows:
 ## Intution:
 
   1. Since $$\text{Mac}$$'ing is the final step, unforgeability is implied!
-  2. Since an adversary cannot hope to forge a valid ciphertext, CPA
+  2. Since an adversary cannot hope to forge a valid ciphertext, the CCA
+     decryption oracle is useless; CPA
      implies CCA!
-</section>
 
+</section>
 <section markdown="1" style="text-align: left;">
 ## Theorem 4.19
 
 Let $$\Pi_E$$ be a CPA-secure private-key encryption scheme, and let $$\Pi_M$$ be a
 strongly secure message authentication code. Then Construction 4.18 is an
 authenticated encryption scheme.
+
+</section>
+<section markdown="1" style="text-align: left;">
+
+### Strategy:
+Show that strong security of $$\Pi_M$$ implies that any "new" ciphertexts
+submitted by $$\mathcal{A}$$ will be invalid.
+
+### Definitions:
+  *  a ciphertext $$\langle c,t\rangle$$ is $$new$$, if $$\mathcal{A}$$ did not
+     receive it from the encryption oracle
+  * $$\text{ValidQuery}$$ is the event that $$\mathcal{A}$$ submits a $$new$$,
+    valid, $$\langle c,t \rangle$$ to the decryption oracle.
+
+</section>
+<section markdown="1">
+
+## Claim 4.20
+
+$$\text{Pr}[\text{ValidQuery}]$$ _is negligible_
+
+</section>
+<section markdown="1" style="text-align:left;">
+
+## Proof of 4.20
+
+Intuitively (again): If $$\mathcal{A}$$ can forge a valid ciphertext, it has beaten
+$$\text{Mac-sforge}$$
+
+</section>
+<section markdown="1" style="text-align:left;">
+
+## Proof of 4.20
+
+Formally: We construct an adversary $$\mathcal{A}_M$$ attacking $$\Pi_M$$
+by running a a $$\text{Mac-sforge}$$ adversary $$\mathcal{A}$$.
+
+Let $$q(\cdots)$$ be a polynomial upper-bound on the number of
+decryption-oracle queries made by $$\mathcal{A}$$
+
+</section>
+<section markdown="1" style="text-align:left;">
+
+  1. Choose uniform $$k_E \in \{0, 1\}^n$$ and $$i \in \{1, . . ., q(n)\}$$.
+  2. Run $$\mathcal{A}$$ on input $$1^n$$. When $$\mathcal{A}$$ makes an
+     encryption-oracle query for the message $$m$$, answer it as follows:
+     1. Compute c ← EnckE(m).
+     2. Query $$c$$ to the MAC oracle and receive $$t$$ in
+     response. Return $$\langle c,t\rangle$$ to $$\mathcal{A}$$.
+
+</section>
+<section markdown="1" style="text-align:left;">
+
+The challenge ciphertext is prepared in the exact same way (with a uniform
+bit $$b \in \{0, 1\}$$ chosen to select the message mbthat gets encrypted).
+
+When $$\mathcal{A}$$ makes a decryption-oracle query for the ciphertext
+$$\langle c,t \rangle$$ answer it
+as follows: If this is the ith decryption-oracle query, output (c, t).j0
+Otherwise:
+  1. If $$\langle c, t \rangle$$ was a response to a previous encryption-oracle query for a
+     message m, return m.
+  2. Otherwise, return ⊥.
 
 </section>
